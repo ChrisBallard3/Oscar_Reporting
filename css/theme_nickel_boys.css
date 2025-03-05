@@ -1,0 +1,29 @@
+/*Nickel Boys*/
+	/*Theme: 1960s Institutional Oppression
+	Colors: Washed-out institutional greens, yellows, and stark blacks
+	Typography: Vintage typewriter fonts with occasional chalkboard script
+	Design: Harsh lighting contrasts, prison bars/grid layouts, notebook-paper textures
+	UI Elements: Button clicks sound like a typewriter, lined-paper background effects, slow fading text reveals*/
+	.nick-button-theme {
+		background-color: #708090;
+		color: #000;
+		font-family: 'PT Serif', serif;
+		border: 2px solid #2f4f4f;
+		padding: 4px;
+		font-size: 16px;
+		cursor: pointer;
+		border-radius: 5px;
+		width: 100px;
+		min-width: 85px;
+		min-height: 75px;
+		text-align: center;
+		letter-spacing: 1px;
+	}
+
+	.nick-button-theme:hover {
+		background-color: #5a6d7b;
+	}
+
+	.nick-button-theme:active {
+		transform: translateY(2px);
+	}

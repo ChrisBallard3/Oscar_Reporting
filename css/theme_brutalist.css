@@ -1,0 +1,30 @@
+/*The Brutalist*/
+	/*Theme: Monochrome Modernism
+	Colors: Black, white, shades of concrete gray
+	Typography: Bold sans-serif, Bauhaus-style geometric fonts
+	Design: Grid-based layout, sharp rectangles, stark shadows
+	UI Elements: Brutalist block-style buttons, sharp-edged modals, ultra-minimalist navigation*/
+	.brut-button-theme {
+		background-color: #222;
+		color: #fff;
+		font-family: 'Helvetica', sans-serif;
+		border: 2px solid #fff;
+		padding: 4px;
+		font-size: 16px;
+		cursor: pointer;
+		border-radius: 0px;
+		width: 100px;
+		min-width: 85px;
+		min-height: 75px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.brut-button-theme:hover {
+		background-color: #000;
+		color: #ddd;
+	}
+
+	.brut-button-theme:active {
+		background-color: #444;
+	}
