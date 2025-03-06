@@ -39,9 +39,9 @@
 
 
 
-
+		<!--Filter Fields-->
 			<div class="filter-box">
-			<!--Filter Fields-->
+			<!--Row One-->
 				<section class="filter-row">
 				<!--MPA Rating-->
 					<section class="filter-field">
@@ -63,42 +63,17 @@
 
 						<div class="range">
 							<input class="filter-input" type="number" id="filter-runtime-min" placeholder="Minutes: Min">
-							<span>-</span>
 							<input class="filter-input" type="number" id="filter-runtime-max" placeholder="Minutes: Max">
 						</div>
 					</section>
-
-				<!--Box Office Earnings-->
-					<!--<section class="filter-field">
-						<label class="filter-label">Box Office Earnings</label>
-						<div class="range">
-							<input class="filter-input" type="number" id="filter-box-office-min" placeholder="Min Earnings">
-							<span>-</span>
-							<input class="filter-input" type="number" id="filter-box-office-max" placeholder="Max Earnings">
-						</div>
-					</section>-->
-
-				<!--Average Rating-->
-					<!--<section class="filter-field">
-						<label class="filter-label">Average Rating</label>
-						<div class="range">
-							<input class="filter-input" type="number" id="filter-rating-min" placeholder="Min Rating (0-10)" step="0.1" min="0" max="10">
-							<span>-</span>
-							<input class="filter-input" type="number" id="filter-rating-max" placeholder="Max Rating (0-10)" step="0.1" min="0" max="10">
-						</div>
-					</section>-->
 				</section>
 
-
-
-
-
-
-
+			<!--Row Two-->
 				<section class="filter-row">
 					<!-- Box Office Earnings Filter -->
 					<!--<section class="filter-field">
 						<label class="filter-label">Box Office Earnings</label>
+
 						<div class="range">
 							<input class="filter-input" type="number" id="filter-box-office-min" placeholder="Min Earnings">
 							<span>-</span>
@@ -106,15 +81,15 @@
 						</div>
 					</section>-->
 
-					<!-- Average Rating Filter -->
-					<!--<section class="filter-field">
+				<!-- Average Rating Filter -->
+					<section class="filter-field">
 						<label class="filter-label">Average Rating</label>
+
 						<div class="range">
 							<input class="filter-input" type="number" id="filter-rating-min" placeholder="Min Rating (0-10)" step="0.1" min="0" max="10">
-							<span>-</span>
 							<input class="filter-input" type="number" id="filter-rating-max" placeholder="Max Rating (0-10)" step="0.1" min="0" max="10">
 						</div>
-					</section>-->
+					</section>
 
 				</section>
 
