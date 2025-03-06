@@ -8,6 +8,7 @@
 		year_ranking INT,
 		year_amount INT,
 		win_percentage DECIMAL(5,2),
-		most_popular INT DEFAULT 0,
+		average_decade_rating INT,
+		average_year_rating INT,
 		FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
 	);

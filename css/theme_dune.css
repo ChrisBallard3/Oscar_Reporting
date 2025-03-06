@@ -22,11 +22,6 @@
 	}
 
 	.dune-button-theme:hover {
-		background-color: #a88b68;
-		box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.6);
-	}
-
-	.dune-button-theme:active {
 		transform: scale(1.8);
 		border-radius: 90px 90px 90px 90px;
 		font-size: 16px;
@@ -35,5 +30,9 @@
 		max-width: 50px;
 		max-height: 50px;
 		font-size: 12px;
-		
+	}
+
+	.dune-button-theme:active {
+		background-color: #a88b68;
+		box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.6);
 	}

@@ -1,6 +1,8 @@
 <?php
 
-	require __DIR__ . '/../database/config.php';
+	require __DIR__ . '/../../database/config.php';
+
+	header('Content-Type: application/json');
 
 	//Fetch unique movies sorted by most Oscar wins
 	$query = "SELECT movies.id, movies.title, movies.description, 
@@ -17,3 +19,4 @@
 
 	header('Content-Type: application/json');
 	echo json_encode($movies);
+	?>

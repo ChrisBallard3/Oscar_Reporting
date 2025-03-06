@@ -1,4 +1,3 @@
-@import url("movie_table.css");
 @import url("theme_a_complete_unknown.css");
 @import url("theme_anora.css");
 @import url("theme_brutalist.css");
@@ -9,6 +8,9 @@
 @import url("theme_nickel_boys.css");
 @import url("theme_substance.css");
 @import url("theme_wicked.css");
+@import url("movie_modal.css");
+@import url("movie_table.css");
+@import url("oscar_modal.css");
 
 
 
@@ -25,7 +27,8 @@
 		padding: 0px 20px 20px 20px;
 	}
 
-	.button-container { 
+	/*Container for the theme buttons*/
+		.theme-button-container { 
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
@@ -33,168 +36,44 @@
 			margin-bottom: 0px;
 		}
 
-	.button-theme {
-		background-color: #007bff;
-		color: white;
-		border: none;
-		padding: 10px;
-		font-size: 16px;
-		cursor: pointer;
-		border-radius: 12px;
-		width: 100px;
-		min-width: 85px;
-		min-height: 75px;
-		text-align: center;
-	}
+	/*Hides movie info option row*/
+		.details-row.hidden {
+			display: none;
+		}
 
-	.button-theme:hover {
-		background-color: #b300a7;
-	}
+	/*Background shadow of modal*/
+		.modal-background {
+			display: none;
+			position: fixed;
+			z-index: 1000;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0,0,0,0.4);
+		}
 
-	.close-btn {
-		float: right;
-		font-size: 24px;
-		cursor: pointer;
-	}
+	/*Position of modal and general surface styling*/
+		.modal-content {
+			position: relative;
+			background-color: #fff;
+			padding: 20px;
+			width: 60%;
+			border-radius: 12px;
+			margin: 10% auto;
+			max-height: 80vh;
+			overflow-y: auto;
+			display: flex;
+			flex-direction: column;
+			max-width: 900px;
+			overflow-y: auto;
+		}
 
-	.description-column {
-		width: 70%;
-	}
-
-	.details-row.hidden {
-		display: none;
-	}
-
-	.modal {
-		display: none;
-		position: fixed;
-		z-index: 1000;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		background-color: rgba(0,0,0,0.4);
-	}
-
-	.modal-body {
-		margin-top: 20px;
-	}
-
-	.modal-content {
-		position: relative;
-		background-color: #fff;
-		margin: 10% auto;
-		padding: 20px;
-		width: 60%;
-		border-radius: 8px;
-		max-height: 80vh;
-		overflow-y: auto;
-	}
-
-	#modal-poster {
-		position: absolute;
-		top: 20px;
-		right: 20px;
-		width: 120px;
-		height: auto;
-		border-radius: 5px;
-	}
-
-	#modal-title {
-		text-align: center;
-		font-size: 24px;
-		margin-bottom: 10px;
-	}
-
-	.movie-description {
-		font-size: 16px;
-		word-wrap: break-word;
-	}
-
-	.movie-item {
-		display: flex;
-		align-items: center;
-		padding: 10px;
-		border-bottom: 1px solid #ddd;
-	}
-
-	.movie-item img {
-		width: 50px;
-		height: 75px;
-		margin-right: 15px;
-	}
-
-	#movie-list {
-		max-height: 500px;
-		overflow-y: auto;
-		border: 1px solid #ddd;
-		padding: 10px;
-		background: #fff;
-	}
-
-	#movies-table {
-		width: 100%;
-		border-collapse: collapse;
-		margin-top: 20px;
-		border: 1px solid black;
-	}
-
-	#movies-table th, #movies-table td {
-		border: 1px solid #ddd;
-		padding: 10px;
-		text-align: left;
-	}
-
-	#movies-table td {
-		text-align: left;
-		padding: 10px;
-		font-size: 16px;
-	}
-	#movies-table .even-row {
-		background-color: #f8f8f8; /* Light gray for even rows */
-	}
-
-	#movies-table .odd-row {
-		background-color: #ffffff; /* White for odd rows */
-	}
-
-	#movies-table tr {
-		border-bottom: 0.5px solid black; /* Thin separator between rows */
-	}
-
-	#movies-table thead {
-		border-bottom: 4px solid black; /* Thick line at the top */
-	}
-
-	.movie-title {
-		cursor: pointer;
-		color: #007BFF;
-		font-size: 18px;
-		font-weight: bold;
-		white-space: nowrap;
-	}
-
-	.movie-title:hover {
-		text-decoration: underline;
-	}
-
-	#search {
-		width: 50%;
-		padding: 10px;
-		font-size: 16px;
-		margin-bottom: 20px;
-	}
-
-	.tab-content {
-		display: none;
-	}
-
-	.tab-content.active {
-		display: block;
-	}
-
-	.title-column {
-		width: 30%;
-		font-weight: bold;
-	}
+	/*Styling for the Search Input*/
+		#search {
+			width: 50%;
+			padding: 10px;
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
