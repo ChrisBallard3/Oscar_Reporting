@@ -1,13 +1,14 @@
-@import url("theme_a_complete_unknown.css");
-@import url("theme_anora.css");
-@import url("theme_brutalist.css");
-@import url("theme_conclave.css");
-@import url("theme_dune.css");
-@import url("theme_emilia_perez.css");
-@import url("theme_im_still_here.css");
-@import url("theme_nickel_boys.css");
-@import url("theme_substance.css");
-@import url("theme_wicked.css");
+@import url("themes/theme_a_complete_unknown.css");
+@import url("themes/theme_anora.css");
+@import url("themes/theme_brutalist.css");
+@import url("themes/theme_conclave.css");
+@import url("themes/theme_dune.css");
+@import url("themes/theme_emilia_perez.css");
+@import url("themes/theme_im_still_here.css");
+@import url("themes/theme_nickel_boys.css");
+@import url("themes/theme_substance.css");
+@import url("themes/theme_wicked.css");
+
 @import url("movie_modal.css");
 @import url("movie_table.css");
 @import url("oscar_modal.css");
@@ -15,19 +16,20 @@
 @import url("table_filters.css");
 
 
+	/*General body element style*/
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			text-align: center;
+			padding: 20px;
+		}
 
-	body {
-		font-family: Arial, sans-serif;
-		background-color: #f4f4f4;
-		text-align: center;
-		padding: 20px;
-	}
-
-	.container {
-		width: 80%;
-		margin: auto;
-		padding: 0px 20px 20px 20px;
-	}
+	/*generic container style*/
+		.container {
+			width: 80%;
+			margin: auto;
+			padding: 0px 20px 20px 20px;
+		}
 
 	/*Container for the theme buttons*/
 		.theme-button-container { 
@@ -43,7 +45,7 @@
 			display: none;
 		}
 
-	/*Background shadow of modal*/
+	/*Background shadow of all modals*/
 		.modal-background {
 			display: none;
 			position: fixed;
@@ -72,15 +74,7 @@
 			overflow-y: auto;
 		}
 
-	/*Styling for the Search Input*/
-		#search {
-			width: 50%;
-			padding: 10px;
-			font-size: 16px;
-			margin-bottom: 20px;
-		}
-
-	/*Theme Buttons Toggle Button*/
+	/*Theme Buttons Toggle Hide Button*/
 		#style-toggle-btn {
 			padding: 12px;
 			font-size: 18px;
@@ -93,7 +87,12 @@
 
 	/*Theme Buttons Toggle Button Hover*/
 		#style-toggle-btn:hover {
-			background-color: #16273F;
+			background-color: #20314a;
+		}
+
+	/*Theme Buttons Toggle Button Active*/
+		#style-toggle-btn:active {
+			background-color: #41618d;
 		}
 
 	/*Theme Buttons Section*/
