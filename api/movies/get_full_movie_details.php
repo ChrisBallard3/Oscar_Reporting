@@ -20,6 +20,7 @@
 		LEFT JOIN box_office_earnings ON movies.id = box_office_earnings.movie_id
 		LEFT JOIN user_ratings ON movies.id = user_ratings.movie_id
 		WHERE movies.id = ?";
+
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
 	$movie = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -30,18 +31,21 @@
 
 	//Fetch Cast
 	$query = "SELECT cast FROM cast WHERE movie_id = ?";
+
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
 	$movie['cast'] = $stmt->fetchAll(PDO::FETCH_COLUMN) ?: [];
 
 	//Fetch Director
 	$query = "SELECT name FROM directors WHERE movie_id = ?";
+
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
 	$movie['director'] = $stmt->fetchColumn() ?: "Unknown";
 
 	//Fetch Writer
 	$query = "SELECT name FROM writers WHERE movie_id = ?";
+
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
 	$movie['writer'] = $stmt->fetchColumn() ?: "Unknown";
@@ -51,6 +55,7 @@
 		FROM oscars
 		JOIN oscar_details ON oscars.movie_id = oscar_details.movie_id
 		WHERE oscars.movie_id = ?";
+
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
 	$oscarData = $stmt->fetch(PDO::FETCH_ASSOC) ?: [
@@ -68,7 +73,6 @@
 	$analyticsData = json_decode($analyticsResponse, true) ?: [];
 
 	$movie["analytics"] = $analyticsData;
-
 
 	header('Content-Type: application/json');
 	echo json_encode($movie, JSON_PRETTY_PRINT);

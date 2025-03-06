@@ -1,0 +1,93 @@
+
+	/*Filer Box Container*/
+		.filter-box {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			padding: 15px;
+			background-color: #fff;
+			border-radius: 12px;
+			border: 2px solid #1F3A60;
+		}
+
+	/*Flex row field for Filters*/
+		.filter-row {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			gap: 20px;
+			align-items: center;
+		}
+
+	/*Each section inside the box*/
+		.filter-field {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 15px;
+			margin: 10px 0px;
+			border-radius: 12px;
+			background-color: #f6f6f6;
+			border: 2px solid #1F3A60;
+		}
+
+	/*Filter Labels*/
+		.filter-label {
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 8px;
+		}
+
+	/*Filter Dropdown*/
+		.filter-select {
+			width: 100%;
+			padding: 10px;
+			border-radius: 8px;
+			border: 2px solid #1F3A60;
+			font-size: 16px;
+			text-align: center;
+			background-color: #fff;
+		}
+
+	/*Filter Inputs*/
+		.filter-input {
+			width: 100%;
+			padding: 10px;
+			border-radius: 8px;
+			border: 2px solid #1F3A60;
+			font-size: 16px;
+			text-align: center;
+			background-color: #fff;
+		}
+
+	/*Filter Range Inputs*/
+		.range {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			width: 100%;
+		}
+
+		/* Buttons */
+		.filter-button {
+			width: 100%;
+			padding: 12px;
+			font-size: 16px;
+			font-weight: bold;
+			background-color: #1F3A60;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			margin-top: 10px;
+			transition: background-color 0.2s;
+		}
+
+		.filter-button:hover {
+			background-color: #16273F;
+		}
+
+		.filter-button:active {
+			background-color: #0D1B2A;
+		}
