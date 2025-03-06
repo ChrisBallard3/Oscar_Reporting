@@ -7,25 +7,32 @@
     <link rel="stylesheet" href="css/styles.css">
 	<script type="module" src="js/App.js"></script>
 </head>
-<body>
-    <h1>Click one of the Best Picture Nominees to theme the page like the film.</h1>
 
-    <div class="theme-button-container">
-        <button class="un-button-theme">A Complete Unknown</button>
-        <button class="anor-button-theme">Anora</button>
-        <button class="brut-button-theme">The Brutalist</button>
-        <button class="con-button-theme">Conclave</button>
-        <button class="dune-button-theme">Dune: Part 2</button>
-        <button class="emil-button-theme">Emilia Perez</button>
-        <button class="stil-button-theme">I'm Still Here</button>
-        <button class="nick-button-theme">Nickel Boys</button>
-        <button class="sub-button-theme">The Substance</button>
-        <button class="wick-button-theme">Wicked</button>
-    </div>
+<body>
+	<!-- Button to toggle the theme selection -->
+	<button id="style-toggle-btn">Click Here to Change the Style</button>
+
+	<!-- Initially Hidden Theme Section -->
+	<div id="theme-section">
+		<h1>Click one of the Best Picture Nominees to theme the page like the film.</h1>
+		
+		<div class="theme-button-container">
+			<button class="un-button-theme">A Complete Unknown</button>
+			<button class="anor-button-theme">Anora</button>
+			<button class="brut-button-theme">The Brutalist</button>
+			<button class="con-button-theme">Conclave</button>
+			<button class="dune-button-theme">Dune: Part 2</button>
+			<button class="emil-button-theme">Emilia Perez</button>
+			<button class="stil-button-theme">I'm Still Here</button>
+			<button class="nick-button-theme">Nickel Boys</button>
+			<button class="sub-button-theme">The Substance</button>
+			<button class="wick-button-theme">Wicked</button>
+		</div>
+	</div>
+
 
 	<div class="container">
         <h1>Academy Award Movie Database</h1>
-        <input type="text" id="search" placeholder="Search for a movie..." onkeyup="searchMovies()">
         
         <table id="movies-table">
             <tbody id="movies-container">

@@ -56,3 +56,22 @@ document.addEventListener("click", function (event) {
         openModal(movieId, section);
     }
 });
+
+//Hides Theme Buttons
+document.addEventListener("DOMContentLoaded", function () {
+    const styleToggleBtn = document.getElementById("style-toggle-btn");
+    const themeSection = document.getElementById("theme-section");
+
+    // Initially hide the theme section
+    themeSection.style.display = "none";
+
+    // Show the theme section when the button is clicked
+    styleToggleBtn.addEventListener("click", function () {
+        themeSection.style.display = "block";
+    });
+
+    // Hide the theme section when the mouse leaves the area
+    themeSection.addEventListener("mouseleave", function () {
+        themeSection.style.display = "none";
+    });
+});

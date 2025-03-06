@@ -11,6 +11,7 @@
 @import url("movie_modal.css");
 @import url("movie_table.css");
 @import url("oscar_modal.css");
+@import url("search_and_filter.css");
 
 
 
@@ -77,3 +78,27 @@
 			font-size: 16px;
 			margin-bottom: 20px;
 		}
+
+		/* Style the toggle button */
+#style-toggle-btn {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #1F3A60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#style-toggle-btn:hover {
+    background-color: #16273F;
+}
+
+/* Initially hide the theme section */
+#theme-section {
+    display: none;
+    padding: 15px;
+    border: 2px solid #1F3A60;
+    border-radius: 8px;
+    background: white;
+}
