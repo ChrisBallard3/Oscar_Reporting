@@ -13,4 +13,3 @@
 	$ratingsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	echo json_encode($ratingsData);
-

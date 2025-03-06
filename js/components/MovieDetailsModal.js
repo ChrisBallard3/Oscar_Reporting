@@ -150,6 +150,3 @@
 	} else {
 		console.error("close-modal-btn not found in DOM.");
 	}
-
-
-

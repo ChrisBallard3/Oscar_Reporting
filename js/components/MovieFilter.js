@@ -1,4 +1,5 @@
 
+
 	import { renderMovieList, allMovies } from "./MovieTable.js";
 
 
@@ -56,22 +57,22 @@
 		const maxRuntime = parseInt(document.getElementById("filter-runtime-max").value) || Infinity;
 		const minRating = parseFloat(document.getElementById("filter-rating-min").value) || 0;
 		const maxRating = parseFloat(document.getElementById("filter-rating-max").value) || 10;
-	
+
 		const [runtimeData, mpaData, ratingsData] = await Promise.all([
 			fetchMovieRuntimes(),
 			fetchMPARatings(),
 			fetchAverageRatings()
 		]);
-	
+
 		console.log("Fetched MPA Data:", mpaData);
 		console.log("Fetched Runtime Data:", runtimeData);
 		console.log("Fetched Average Ratings:", ratingsData);
-	
+
 		const moviesWithFilters = allMovies.map(movie => {
 			const mpaInfo = mpaData.find(mpa => mpa.id === movie.id);
 			const runtimeInfo = runtimeData.find(runtime => runtime.id === movie.id);
 			const ratingInfo = ratingsData.find(rating => rating.id === movie.id);
-	
+
 			return {
 				...movie,
 				mpa_rating: mpaInfo ? mpaInfo.mpa_rating : null,
@@ -79,7 +80,7 @@
 				average_rating: ratingInfo ? parseFloat(ratingInfo.average_rating) : null
 			};
 		});
-	
+
 		const filteredMovies = moviesWithFilters.filter(movie => {
 			const passesMPA = !selectedMPA || movie.mpa_rating === selectedMPA;
 			const runtime = movie.runtime !== null ? parseInt(movie.runtime) : null;
@@ -92,13 +93,13 @@
 				(rating !== null) &&
 				rating >= minRating &&
 				rating <= maxRating;
-	
+
 			return passesMPA && passesRuntime && passesRating;
 		});
-	
+
 		console.log("Filtered Movies:", filteredMovies);
 		updateMovieTable(filteredMovies);
 	}
-	
+
 
 	document.getElementById("apply-filters").addEventListener("click", applyFilters);

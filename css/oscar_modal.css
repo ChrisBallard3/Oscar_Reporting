@@ -1,130 +1,130 @@
 
-	.oscar-modal-button {
-		padding: 10px 15px;
-		font-size: 20px;
-		cursor: pointer;
-		border: none;
-		background-color: #b58900;
-		color: #fdf3d1;
-		border-radius: 8px;
-		margin-top: 10px;
-	}
+.oscar-modal-button {
+	padding: 10px 15px;
+	font-size: 20px;
+	cursor: pointer;
+	border: none;
+	background-color: #b58900;
+	color: #fdf3d1;
+	border-radius: 8px;
+	margin-top: 10px;
+}
 
-	.oscar-modal-button:hover {
-		background-color: #8d6a01;
-	}
+.oscar-modal-button:hover {
+	background-color: #8d6a01;
+}
 
-	.oscar-modal-button:active {
-		background-color: #674d01;
-		border: 1px solid #b58900;
-	}
+.oscar-modal-button:active {
+	background-color: #674d01;
+	border: 1px solid #b58900;
+}
 /*Three above are for the movie modal*/
 
 
-	/*Position of modal and general surface styling*/
-		#oscar-modal-content {
-			position: relative;
-			background-color: #fff;
-			padding: 0px;
-			border-radius: 12px;
-			margin: 10% auto;
-			max-height: 80vh;
-			/*overflow-y: auto;*/
-			display: flex;
-			flex-direction: column;
-			max-width: 650px;
-		}
+/*Position of modal and general surface styling*/
+	#oscar-modal-content {
+		position: relative;
+		background-color: #fff;
+		padding: 0px;
+		border-radius: 12px;
+		margin: 10% auto;
+		max-height: 80vh;
+		/*overflow-y: auto;*/
+		display: flex;
+		flex-direction: column;
+		max-width: 650px;
+	}
 
-	/*Container for header*/
-		#container-oscar-modal-header {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			padding: 15px;
-			background-color: #fdf3d1;
-			border-bottom: 7.5px solid #b58900;
-			border-radius: 12px 12px 0px 0px;
-		}
+/*Container for header*/
+	#container-oscar-modal-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 15px;
+		background-color: #fdf3d1;
+		border-bottom: 7.5px solid #b58900;
+		border-radius: 12px 12px 0px 0px;
+	}
 
-	/*Main Title*/
-		.oscar-modal-title {
-			font-size: 36px;
-			font-weight: bold;
-			color: #b58900;
-		}
+/*Main Title*/
+	.oscar-modal-title {
+		font-size: 36px;
+		font-weight: bold;
+		color: #b58900;
+	}
 
-	/*Sub Title*/
-		.oscar-category-header {
-			text-align: center;
-			font-size: 22px;
-			font-weight: bold;
-			color: #b58900;
-			margin-top: 5px;
-		}
+/*Sub Title*/
+	.oscar-category-header {
+		text-align: center;
+		font-size: 22px;
+		font-weight: bold;
+		color: #b58900;
+		margin-top: 5px;
+	}
 
-	/*Container for 'X' Close Button*/
-		#container-oscar-modal-x {
-			flex: 0.5;
-			display: flex;
-			min-width: 35px;
-			max-width: 50px;
-		}
+/*Container for 'X' Close Button*/
+	#container-oscar-modal-x {
+		flex: 0.5;
+		display: flex;
+		min-width: 35px;
+		max-width: 50px;
+	}
 
-	/*'X' Close Button*/
-		.button-close-x {
-			font-size: 36px;
-			cursor: pointer;
-			background: none;
-			color: #000000;
-			width: 50px;
-			height: 50px;
-		}
+/*'X' Close Button*/
+	.button-close-x {
+		font-size: 36px;
+		cursor: pointer;
+		background: none;
+		color: #000000;
+		width: 50px;
+		height: 50px;
+	}
 
-		.oscar-scroll-box {
-			overflow-y: auto;
-		}
+	.oscar-scroll-box {
+		overflow-y: auto;
+	}
 
-		.oscar-category-group {
-			margin: 0px 0;
-			padding: 0px 0;
-			border-bottom: 5px solid #b58900;
-		}
+	.oscar-category-group {
+		margin: 0px 0;
+		padding: 0px 0;
+		border-bottom: 5px solid #b58900;
+	}
 
-		.oscar-category-group h3 {
-			font-size: 28px;
-			font-weight: bold;
-			color: #333;
-			background: #f6f6f6;
-			padding: 5px;
-			border-bottom: 2px solid #ddd;
-			margin: 0px;
-		}
+	.oscar-category-group h3 {
+		font-size: 28px;
+		font-weight: bold;
+		color: #333;
+		background: #f6f6f6;
+		padding: 5px;
+		border-bottom: 2px solid #ddd;
+		margin: 0px;
+	}
 
-		.oscar-nominees {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-		}
+	.oscar-nominees {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
 
-		.oscar-nominees li {
-			font-size: 16px;
-			padding: 8px 12px;
-			border-bottom: 1px solid #ddd;
-			margin: 0;
-		}
+	.oscar-nominees li {
+		font-size: 16px;
+		padding: 8px 12px;
+		border-bottom: 1px solid #ddd;
+		margin: 0;
+	}
 
-		.oscar-nominees .winner {
-			font-weight: bold;
-			color: #b58900;
-			background: rgba(181, 137, 0, 0.1);
-			font-size: 18px;
-		}
-		
-		.oscar-nominees li:last-child {
-			border-bottom: none;
-		}
+	.oscar-nominees .winner {
+		font-weight: bold;
+		color: #b58900;
+		background: rgba(181, 137, 0, 0.1);
+		font-size: 18px;
+	}
+	
+	.oscar-nominees li:last-child {
+		border-bottom: none;
+	}
 
-		.oscar-category-group:last-child {
-			border-bottom: none;
-		}
+	.oscar-category-group:last-child {
+		border-bottom: none;
+	}

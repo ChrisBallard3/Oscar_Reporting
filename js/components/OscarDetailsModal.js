@@ -1,5 +1,4 @@
-
-	import { fetchOscarCategory } from "../api/MoviesAPI.js";
+import { fetchOscarCategory } from "../api/MoviesAPI.js";
 
 
 	export async function openOscarModal(movieId) {
