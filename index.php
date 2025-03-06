@@ -70,8 +70,8 @@
 
 			<!--Row Two-->
 				<section class="filter-row">
-					<!-- Box Office Earnings Filter -->
-					<!--<section class="filter-field">
+				<!--Box Office Earnings-->
+					<section class="filter-field">
 						<label class="filter-label">Box Office Earnings</label>
 
 						<div class="range">
@@ -79,9 +79,9 @@
 							<span>-</span>
 							<input class="filter-input" type="number" id="filter-box-office-max" placeholder="Max Earnings">
 						</div>
-					</section>-->
+					</section>
 
-				<!-- Average Rating Filter -->
+				<!--Average Rating-->
 					<section class="filter-field">
 						<label class="filter-label">Average Rating</label>
 
@@ -90,10 +90,29 @@
 							<input class="filter-input" type="number" id="filter-rating-max" placeholder="Max Rating (0-10)" step="0.1" min="0" max="10">
 						</div>
 					</section>
-
 				</section>
 
+			<!--Row Three-->
+			<section class="filter-row">
+					<!--Movie Workers-->
+					<section class="filter-field">
+						<label class="filter-label" for="filter-person">Search People (Writers, Directors, Cast):</label>
 
+						<input class="filter-input" type="text" id="filter-person" placeholder="Enter a name">
+					</section>
+
+
+				<!--Directors-->
+					<!--<section class="filter-field">
+						<label class="filter-label">Average Rating</label>
+
+						<div class="range">
+							<input class="filter-input" type="number" id="filter-rating-min" placeholder="Min Rating (0-10)" step="0.1" min="0" max="10">
+							<input class="filter-input" type="number" id="filter-rating-max" placeholder="Max Rating (0-10)" step="0.1" min="0" max="10">
+						</div>
+					</section>-->
+
+				</section>
 				
 
 			<!--Filter Button-->

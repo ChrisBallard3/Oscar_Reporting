@@ -4,7 +4,8 @@
 
 	header('Content-Type: application/json');
 
-	$query = "SELECT user_ratings.id, user_ratings.average_rating, movies.title FROM user_ratings 
+	$query = "SELECT user_ratings.id, user_ratings.average_rating, movies.title 
+		FROM user_ratings 
 		JOIN movies ON user_ratings.id = movies.id 
 		WHERE average_rating IS NOT NULL";
 

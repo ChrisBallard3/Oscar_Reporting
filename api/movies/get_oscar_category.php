@@ -26,8 +26,10 @@
 		$oscarYear = $oscar['oscar_year'];
 		$ceremonyNumber = $oscar['ceremony_number'];
 
-		$query = "SELECT nominee, win FROM oscar_details 
-			WHERE oscar_year = ? AND category = ? 
+		$query = "SELECT nominee, win 
+			FROM oscar_details 
+			WHERE oscar_year = ? 
+			AND category = ? 
 			ORDER BY win DESC";
 
 		$stmt = $pdo->prepare($query);

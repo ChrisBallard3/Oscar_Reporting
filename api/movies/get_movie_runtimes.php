@@ -6,8 +6,9 @@
 
 	$query = "SELECT movie_details.id, movie_details.runtime, movies.title 
 		FROM movie_details 
-		JOIN movies ON movie_details.id = movies.id 
-		WHERE movie_details.runtime IS NOT NULL AND movie_details.runtime > 0";
+		JOIN movies ON movie_details.movie_id = movies.id 
+		WHERE movie_details.runtime IS NOT NULL 
+		AND movie_details.runtime > 0";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute();

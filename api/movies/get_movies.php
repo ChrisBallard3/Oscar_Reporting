@@ -5,7 +5,7 @@
 	header('Content-Type: application/json');
 
 	$query = "SELECT movies.id, movies.title, movies.description, 
-		COALESCE(oscars.total_wins, 0) AS total_wins
+			COALESCE(oscars.total_wins, 0) AS total_wins
 		FROM movies
 		LEFT JOIN oscars ON movies.id = oscars.movie_id
 		WHERE oscars.total_wins IS NOT NULL
