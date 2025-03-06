@@ -9,6 +9,7 @@
 @import url("themes/theme_substance.css");
 @import url("themes/theme_wicked.css");
 
+@import url("themes/general_theme.css");
 @import url("movie_modal.css");
 @import url("movie_table.css");
 @import url("oscar_modal.css");
@@ -74,32 +75,4 @@
 			overflow-y: auto;
 		}
 
-	/*Theme Buttons Toggle Hide Button*/
-		#style-toggle-btn {
-			padding: 12px;
-			font-size: 18px;
-			background-color: #1F3A60;
-			color: white;
-			border: none;
-			cursor: pointer;
-			border-radius: 8px;
-		}
 
-	/*Theme Buttons Toggle Button Hover*/
-		#style-toggle-btn:hover {
-			background-color: #20314a;
-		}
-
-	/*Theme Buttons Toggle Button Active*/
-		#style-toggle-btn:active {
-			background-color: #41618d;
-		}
-
-	/*Theme Buttons Section*/
-		#theme-section {
-			display: none;
-			padding: 15px;
-			border: 2px solid #1F3A60;
-			border-radius: 8px;
-			background: white;
-		}

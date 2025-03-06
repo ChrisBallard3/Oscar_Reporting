@@ -1,0 +1,33 @@
+
+	/*Theme Buttons Toggle Hide Button*/
+	#style-toggle-btn {
+		padding: 12px;
+		font-size: 18px;
+		background-color: #1F3A60;
+		color: white;
+		border: none;
+		cursor: pointer;
+		border-radius: 8px;
+	}
+
+	/*Theme Buttons Toggle Button Hover*/
+		#style-toggle-btn:hover {
+			background-color: #20314a;
+		}
+
+	/*Theme Buttons Toggle Button Active*/
+		#style-toggle-btn:active {
+			background-color: #41618d;
+		}
+
+	/*Theme Buttons Section*/
+		#theme-section {
+			display: none;
+			padding: 15px;
+			border: 2px solid #1F3A60;
+			border-radius: 8px;
+			background: fff;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+			transition: opacity 0.3s ease-in-out;
+			align-items: center;
+		}

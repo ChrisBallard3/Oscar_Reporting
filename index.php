@@ -8,6 +8,7 @@
 		<title>Academy Award Movie Database</title>
 		<link rel="stylesheet" href="css/styles.css">
 		<script type="module" src="js/App.js"></script>
+
 	</head>
 
 	<body>
@@ -43,20 +44,6 @@
 			<div class="filter-box">
 			<!--Row One-->
 				<section class="filter-row">
-				<!--MPA Rating-->
-					<section class="filter-field">
-						<label class="filter-label" for="mpa-filter">MPA Rating:</label>
-
-						<select class="filter-select" id="mpa-filter">
-							<option value="">All</option>
-							<option value="G">G</option>
-							<option value="PG">PG</option>
-							<option value="PG-13">PG-13</option>
-							<option value="R">R</option>
-							<option value="NC-17">NC-17</option>
-						</select>
-					</section>
-
 				<!--Movie Length-->
 					<section class="filter-field">
 						<label class="filter-label">Movie Length</label>
@@ -66,10 +53,7 @@
 							<input class="filter-input" type="number" id="filter-runtime-max" placeholder="Minutes: Max">
 						</div>
 					</section>
-				</section>
 
-			<!--Row Two-->
-				<section class="filter-row">
 				<!--Box Office Earnings-->
 					<section class="filter-field">
 						<label class="filter-label">Box Office Earnings</label>
@@ -92,14 +76,38 @@
 					</section>
 				</section>
 
-			<!--Row Three-->
-			<section class="filter-row">
-					<!--Movie Workers-->
+			<!--Row Two-->
+				<section class="filter-row">
+				<!--MPA Rating-->
+					<section class="filter-field">
+						<label class="filter-label" for="mpa-filter">MPA Rating:</label>
+
+						<select class="filter-select" id="mpa-filter">
+							<option value="">All</option>
+							<option value="G">G</option>
+							<option value="PG">PG</option>
+							<option value="PG-13">PG-13</option>
+							<option value="R">R</option>
+							<option value="NC-17">NC-17</option>
+						</select>
+					</section>
+
+				<!--Movie Workers-->
 					<section class="filter-field">
 						<label class="filter-label" for="filter-person">Search People (Writers, Directors, Cast):</label>
 
 						<input class="filter-input" type="text" id="filter-person" placeholder="Enter a name">
 					</section>
+				</section>
+
+			<!--Row Three-->
+				<section class="filter-row">
+					<!--Movie Workers-->
+					<!--<section class="filter-field">
+						<label class="filter-label" for="filter-person">Search People (Writers, Directors, Cast):</label>
+
+						<input class="filter-input" type="text" id="filter-person" placeholder="Enter a name">
+					</section>-->
 
 
 				<!--Directors-->
@@ -167,11 +175,11 @@
 
 			<!--Details-->
 				<section id="container-movie-modal-details">
-					<nav id="description-content" class="tab-content container-description active"></nav>
-					<nav id="movie-details-content" class="tab-content container-movie-details"></nav>
-					<nav id="cast-crew-content" class="tab-content container-cast-crew"></nav>
-					<nav id="oscars-content" class="tab-content container-oscars"></nav>
-					<nav id="analytics-content" class="tab-content container-analytics"></nav>
+					<div id="description-content" class="tab-content container-description active"></div>
+					<div id="movie-details-content" class="tab-content container-movie-details"></div>
+					<div id="cast-crew-content" class="tab-content container-cast-crew"></div>
+					<div id="oscars-content" class="tab-content container-oscars"></div>
+					<div id="analytics-content" class="tab-content container-analytics"></div>
 				</section>
 			</div>
 		</div>
