@@ -1,7 +1,8 @@
-import { displayMovies } from "./components/MovieTable.js";
+import { displayMovies } from "./components/DataTable.js";
 import { applyFilters } from "./components/MovieFilter.js";
-import "./components/OscarDetailsModal.js";
+import "./components/OscarModal.js";
 import "./components/themes/ThemeSettings.js";
+import { loadMovieModal } from "./components/MovieModal.js";
 
 
 document.addEventListener("DOMContentLoaded", function () {

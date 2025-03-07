@@ -1,24 +1,28 @@
 
-	.oscar-modal-button {
-		padding: 10px 15px;
-		font-size: 20px;
-		cursor: pointer;
-		border: none;
-		background-color: #b58900;
-		color: #fdf3d1;
-		border-radius: 8px;
-		margin-top: 10px;
-	}
+/*Button to open modal*/
+		.oscar-modal-button {
+			padding: 10px 15px;
+			font-size: 20px;
+			cursor: pointer;
+			border: none;
+			background-color: #b58900;
+			color: #fdf3d1;
+			border-radius: 8px;
+			margin-top: 10px;
+		}
 
-	.oscar-modal-button:hover {
-		background-color: #8d6a01;
-	}
+	/*Button to open modal hover style*/
+		.oscar-modal-button:hover {
+			background-color: #8d6a01;
+		}
 
-	.oscar-modal-button:active {
-		background-color: #674d01;
-		border: 1px solid #b58900;
-	}
-/*Three above are for the movie modal*/
+	/*Button to open modal active style*/
+		.oscar-modal-button:active {
+			background-color: #674d01;
+			border: 1px solid #b58900;
+		}
+	/*Three above are for the movie modal*/
+
 
 
 	/*Position of modal and general surface styling*/
@@ -29,7 +33,6 @@
 			border-radius: 12px;
 			margin: 10% auto;
 			max-height: 80vh;
-			/*overflow-y: auto;*/
 			display: flex;
 			flex-direction: column;
 			max-width: 650px;
@@ -81,6 +84,7 @@
 			height: 50px;
 		}
 
+	/*Overflow box for categories*/
 		.oscar-scroll-box {
 			overflow-y: auto;
 		}
@@ -120,7 +124,7 @@
 			background: rgba(181, 137, 0, 0.1);
 			font-size: 18px;
 		}
-		
+
 		.oscar-nominees li:last-child {
 			border-bottom: none;
 		}

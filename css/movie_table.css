@@ -48,13 +48,7 @@
 		margin-bottom: 20px;
 	}
 
-	.tab-content {
-		display: none;
-	}
 
-	.tab-content.active {
-		display: block;
-	}
 
 	.title-column {
 		width: 30%;
@@ -82,3 +76,49 @@
 		color: #0150a4;
 		font-size: 18.5px;
 	}
+
+	/*Center the selected movie title*/
+		/*.movie-title.centered-title {
+			text-align: center !important;
+		}*/
+
+	/* Center the buttons inside the hidden row */
+		/*.details-row td {
+			text-align: center !important;
+		}*/
+
+	/* Style for buttons inside the hidden row */
+		.open-modal-btn {
+			padding: 10px 15px;
+			margin: 0px 5px;
+			font-size: 14px;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			color: #fff;
+			background-color: #1F3A60;
+			transition: background-color 0.2s ease-in-out;
+		}
+
+	/* Button hover effect */
+		.open-modal-btn:hover {
+			background-color: #20314a;
+		}
+
+	/* Button active effect */
+		.open-modal-btn:active {
+			background-color: #41618d;
+		}
+
+
+
+		/* Center the buttons inside the hidden row */
+.details-row td {
+    text-align: center;
+}
+
+/* Align buttons to center */
+.details-row .open-modal-btn {
+    display: inline-block; /* Ensures buttons are properly spaced */
+    margin: 5px; /* Adds spacing */
+}

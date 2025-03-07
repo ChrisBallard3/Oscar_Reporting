@@ -30,7 +30,7 @@
 	}
 
 	//Fetch Cast
-	$query = "SELECT cast FROM cast WHERE movie_id = ?";
+	$query = "SELECT name FROM cast WHERE movie_id = ?";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);

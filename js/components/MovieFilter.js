@@ -1,5 +1,5 @@
 
-	import { renderMovieList, allMovies } from "./MovieTable.js";
+	import { renderMovieList, allMovies } from "./DataTable.js";
 
 	export let lastFilteredMovies = [];
 
@@ -55,7 +55,7 @@
 	}
 	
 
-	function updateMovieTable(filteredMovies) {
+	function updateDataTable(filteredMovies) {
 		const container = document.getElementById("movies-container");
 		container.innerHTML = "";
 
@@ -134,7 +134,7 @@
 		});
 
 		console.log("Filtered Movies:", filteredMovies);
-		updateMovieTable(filteredMovies);
+		updateDataTable(filteredMovies);
 	}
 
 	document.getElementById("apply-filters").addEventListener("click", applyFilters);

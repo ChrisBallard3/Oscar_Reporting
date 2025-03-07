@@ -26,7 +26,7 @@
 			flex-direction: column;
 			align-items: center;
 			padding: 15px;
-			margin: 10px 0px;
+			margin: 5px 0px;
 			border-radius: 12px;
 			background-color: #f6f6f6;
 			border: 2px solid #1F3A60;
@@ -53,7 +53,7 @@
 	/*Filter Inputs*/
 		.filter-input {
 			width: 100%;
-			padding: 10px;
+			padding: 10px 0px;
 			border-radius: 8px;
 			border: 2px solid #1F3A60;
 			font-size: 16px;
@@ -75,19 +75,18 @@
 			padding: 12px;
 			font-size: 16px;
 			font-weight: bold;
-			background-color: #1F3A60;
-			color: white;
 			border: none;
 			border-radius: 8px;
 			cursor: pointer;
-			margin-top: 10px;
-			transition: background-color 0.2s;
+			color: #fff;
+			background-color: #1F3A60;
+			transition: background-color 0.2s ease-in-out;
 		}
 
 		.filter-button:hover {
-			background-color: #16273F;
+			background-color: #20314a;
 		}
 
 		.filter-button:active {
-			background-color: #0D1B2A;
+			background-color: #41618d;
 		}

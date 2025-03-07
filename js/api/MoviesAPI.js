@@ -18,17 +18,19 @@
 		try {
 			const response = await fetch(`http://localhost:8888/Oscar_Reporting/api/movies/get_full_movie_details.php?id=${movieId}`);
 			const data = await response.json();
-
-			if (data.error) {
-				console.error("Error fetching movie details:", data.error);
+	
+			if (!data || Object.keys(data).length === 0) {
+				console.warn(`No movie data found for ID ${movieId}`);
 				return null;
 			}
+	
 			return data;
 		} catch (error) {
-			console.error("Error fetching full movie details:", error);
+			console.error("Error fetching movie details:", error);
 			return null;
 		}
 	}
+	
 
 	export async function fetchMovieAnalytics(movieId) {
 		try {
