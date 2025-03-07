@@ -7,7 +7,8 @@
 		die(json_encode(["error" => "No movie ID provided"]));
 	}
 
-	$query = "SELECT COUNT(DISTINCT movie_id) FROM user_ratings";
+	$query = "SELECT COUNT(DISTINCT movie_id) 
+		FROM user_ratings";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute();
@@ -24,7 +25,9 @@
 
 	$overallRanking = array_search($movieId, array_column($rankedMovies, 'movie_id')) + 1;
 
-	$query = "SELECT release_date FROM movie_details WHERE movie_id = ?";
+	$query = "SELECT release_date 
+		FROM movie_details 
+		WHERE movie_id = ?";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
@@ -78,7 +81,9 @@
 
 	$yearRanking = array_search($movieId, array_column($rankedYearMovies, 'id')) + 1;
 
-	$query = "SELECT total_nominations, total_wins FROM oscars WHERE movie_id = ?";
+	$query = "SELECT total_nominations, total_wins 
+		FROM oscars 
+		WHERE movie_id = ?";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);

@@ -4,9 +4,9 @@
 
 	header('Content-Type: application/json');
 
-	$query = "SELECT title, description 
+	$query = "SELECT title 
 		FROM movies
-		WHERE description IS NOT NULL";
+		WHERE title IS NOT NULL";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute();

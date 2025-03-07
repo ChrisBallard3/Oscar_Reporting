@@ -95,8 +95,8 @@
 		//Populate "Cast & Crew" Tab
 			document.getElementById("cast-crew-content").innerHTML = `
 				<div class="flex">
-					<div class="dir"><strong>Directors:</strong> ${movieData.directors || "Unknown"}</div>
-					<div class="wri"><strong>Writers:</strong> ${movieData.writers || "Unknown"}</div>
+					<div class="dir"><strong>Directors:</strong> ${movieData.director || "Unknown"}</div>
+					<div class="wri"><strong>Writers:</strong> ${movieData.writer || "Unknown"}</div>
 				</div>
 
 				<div class="oscar-cast">
@@ -129,7 +129,6 @@
 				</div>
 			`;
 
-		
 			setTimeout(() => {
 				const oscarButton = document.getElementById("open-oscar-modal");
 				if (oscarButton) {

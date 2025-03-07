@@ -4,7 +4,7 @@
 
 	header('Content-Type: application/json');
 
-	$query = "SELECT movie_details.id, movie_details.runtime, movies.title 
+	$query = "SELECT movie_details.movie_id, movie_details.runtime, movies.title 
 		FROM movie_details 
 		JOIN movies ON movie_details.movie_id = movies.id 
 		WHERE movie_details.runtime IS NOT NULL 

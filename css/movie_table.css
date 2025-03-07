@@ -110,15 +110,13 @@
 			background-color: #41618d;
 		}
 
+	/* Center the buttons inside the hidden row */
+		.details-row td {
+			text-align: center;
+		}
 
-
-		/* Center the buttons inside the hidden row */
-.details-row td {
-    text-align: center;
-}
-
-/* Align buttons to center */
-.details-row .open-modal-btn {
-    display: inline-block; /* Ensures buttons are properly spaced */
-    margin: 5px; /* Adds spacing */
-}
+	/* Align buttons to center */
+		.details-row .open-modal-btn {
+			display: inline-block;
+			margin: 5px;
+		}

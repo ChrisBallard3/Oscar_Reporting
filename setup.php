@@ -19,14 +19,35 @@
 		//Connect to database
 		$pdo->exec("USE $dbName");
 
-		//Call migration files
+		//Create migrations table (if it doesn't exist)
+		$pdo->exec("CREATE TABLE IF NOT EXISTS migrations (
+			id INT AUTO_INCREMENT PRIMARY KEY,
+			migration_name VARCHAR(255) UNIQUE NOT NULL,
+			executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+		)");
+
+		//Get already applied migrations
+		$appliedMigrations = $pdo->query("SELECT migration_name FROM migrations")->fetchAll(PDO::FETCH_COLUMN);
 		$migrationFiles = glob(__DIR__ . '/database/migrations/*.sql');
 
 		foreach ($migrationFiles as $file) {
+			$migrationName = basename($file);
+
+			//Skip if migration has already happened
+			if (in_array($migrationName, $appliedMigrations)) {
+				echo "Skipping migration: $migrationName (already applied)<br>";
+				continue;
+			}
+
+			//Apply migration
 			$query = file_get_contents($file);
 			$pdo->exec($query);
-			echo "Executed migration: " . basename($file) . "\n";
+
+			//Log applied migration
+			$pdo->prepare("INSERT INTO migrations (migration_name) VALUES (?)")->execute([$migrationName]);
+			echo "Executed migration: $migrationName<br>";
 		}
+
 		echo "All Migrations Executed Successfully!";
 
 	} catch (PDOException $e) {

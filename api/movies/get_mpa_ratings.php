@@ -4,9 +4,9 @@
 
 	header('Content-Type: application/json');
 
-	$query = "SELECT id, mpa_rating 
-		FROM movie_details
-		WHERE mpa_rating IS NOT NULL";
+	$query = "SELECT movie_details.movie_id, movie_details.mpa_rating 
+		FROM movie_details 
+		WHERE movie_details.mpa_rating IS NOT NULL";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute();

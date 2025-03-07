@@ -30,21 +30,27 @@
 	}
 
 	//Fetch Cast
-	$query = "SELECT name FROM cast WHERE movie_id = ?";
+	$query = "SELECT name 
+		FROM cast 
+		WHERE movie_id = ?";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
 	$movie['cast'] = $stmt->fetchAll(PDO::FETCH_COLUMN) ?: [];
 
 	//Fetch Director
-	$query = "SELECT name FROM directors WHERE movie_id = ?";
+	$query = "SELECT name 
+		FROM directors 
+		WHERE movie_id = ?";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);
 	$movie['director'] = $stmt->fetchColumn() ?: "Unknown";
 
 	//Fetch Writer
-	$query = "SELECT name FROM writers WHERE movie_id = ?";
+	$query = "SELECT name 
+		FROM writers 
+		WHERE movie_id = ?";
 
 	$stmt = $pdo->prepare($query);
 	$stmt->execute([$movieId]);

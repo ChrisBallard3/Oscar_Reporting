@@ -12,45 +12,29 @@
 	</head>
 
 	<body>
-		<!--Button Toggles Theme Selection-->
-		<button id="style-toggle-btn">Click Here to Change the Style</button>
-
-		<!--Initially Hidden Theme Section-->
-		<div id="theme-section">
-			<h1>Click one of the Best Picture Nominees to theme the page like the film.</h1>
-
-			<div class="theme-button-container">
-				<button class="un-button-theme">A Complete Unknown</button>
-				<button class="anor-button-theme">Anora</button>
-				<button class="brut-button-theme">The Brutalist</button>
-				<button class="con-button-theme">Conclave</button>
-				<button class="dune-button-theme">Dune: Part 2</button>
-				<button class="emil-button-theme">Emilia Perez</button>
-				<button class="stil-button-theme">I'm Still Here</button>
-				<button class="nick-button-theme">Nickel Boys</button>
-				<button class="sub-button-theme">The Substance</button>
-				<button class="wick-button-theme">Wicked</button>
-			</div>
-		</div>
-
 		<main class="container">
 			<h1>Academy Award Movie Database</h1>
-
-
-
-
 
 		<!--Filter Fields-->
 			<div class="filter-box">
 			<!--Row One-->
 				<section class="filter-row">
+				<!--Oscars Won-->
+					<section class="filter-field">
+						<label class="filter-label" for="filter-oscar-slider">Minimum Oscars Won</label>
+
+						<input type="range" id="filter-oscar-slider" min="0" max="11" value="0" step="1">
+						
+						<span id="oscar-slider-value">0</span>
+					</section>
+
 				<!--Movie Length-->
 					<section class="filter-field">
-						<label class="filter-label">Movie Length</label>
+						<label class="filter-label">Movie Length (In Minutes)</label>
 
 						<div class="range">
-							<input class="filter-input" type="number" id="filter-runtime-min" placeholder="Minutes: Min">
-							<input class="filter-input" type="number" id="filter-runtime-max" placeholder="Minutes: Max">
+							<input class="filter-input" type="number" id="filter-runtime-min" placeholder="Min">
+							<input class="filter-input" type="number" id="filter-runtime-max" placeholder="Max">
 						</div>
 					</section>
 
@@ -59,25 +43,39 @@
 						<label class="filter-label">Box Office Earnings</label>
 
 						<div class="range">
-							<input class="filter-input" type="number" id="filter-box-office-min" placeholder="Min Earnings">
+							<input class="filter-input" type="number" id="filter-box-office-min" placeholder="Min">
 							<span>-</span>
-							<input class="filter-input" type="number" id="filter-box-office-max" placeholder="Max Earnings">
+							<input class="filter-input" type="number" id="filter-box-office-max" placeholder="Max">
 						</div>
 					</section>
 
 				<!--Average Rating-->
 					<section class="filter-field">
-						<label class="filter-label">Average Rating</label>
+						<label class="filter-label">Average Rating (0-10)</label>
 
 						<div class="range">
-							<input class="filter-input" type="number" id="filter-rating-min" placeholder="Min Rating (0-10)" step="0.1" min="0" max="10">
-							<input class="filter-input" type="number" id="filter-rating-max" placeholder="Max Rating (0-10)" step="0.1" min="0" max="10">
+							<input class="filter-input" type="number" id="filter-rating-min" placeholder="Min" step="0.1" min="0" max="10">
+							<input class="filter-input" type="number" id="filter-rating-max" placeholder="Max" step="0.1" min="0" max="10">
 						</div>
 					</section>
 				</section>
 
 			<!--Row Two-->
 				<section class="filter-row">
+				<!--Won an Oscar-->
+					<section class="filter-field">
+						<label class="filter-label" for="filter-oscar-winner">
+							<input type="checkbox" id="filter-oscar-winner"> Oscar Winner
+						</label>
+					</section>
+
+				<!--Movie Titles-->
+					<section class="filter-field">
+						<label class="filter-label" for="filter-title">Search Movies</label>
+
+						<input class="filter-input" type="text" id="filter-title" placeholder="Search Movies">
+					</section>
+				
 				<!--MPA Rating-->
 					<section class="filter-field">
 						<label class="filter-label" for="mpa-filter">MPA Rating:</label>
@@ -94,47 +92,17 @@
 
 				<!--Movie Workers-->
 					<section class="filter-field">
-						<label class="filter-label" for="filter-person">Search People (Writers, Directors, Cast):</label>
+						<label class="filter-label" for="filter-person">Search People (Writers/Directors/Cast):</label>
 
 						<input class="filter-input" type="text" id="filter-person" placeholder="Enter a name">
 					</section>
 				</section>
-
-			<!--Row Three-->
-				<section class="filter-row">
-					<!--Movie Workers-->
-					<!--<section class="filter-field">
-						<label class="filter-label" for="filter-person">Search People (Writers, Directors, Cast):</label>
-
-						<input class="filter-input" type="text" id="filter-person" placeholder="Enter a name">
-					</section>-->
-
-
-				<!--Directors-->
-					<!--<section class="filter-field">
-						<label class="filter-label">Average Rating</label>
-
-						<div class="range">
-							<input class="filter-input" type="number" id="filter-rating-min" placeholder="Min Rating (0-10)" step="0.1" min="0" max="10">
-							<input class="filter-input" type="number" id="filter-rating-max" placeholder="Max Rating (0-10)" step="0.1" min="0" max="10">
-						</div>
-					</section>-->
-
-				</section>
-				
 
 			<!--Filter Button-->
 				<section class="filter">
 					<button class="filter-button" id="apply-filters">Apply Filters</button>
 				</section>
 			</div>
-
-
-
-
-
-
-
 
 			<table id="movies-table">
 				<tbody id="movies-container">
