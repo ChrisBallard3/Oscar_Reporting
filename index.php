@@ -152,7 +152,6 @@
 			</div>
 		</div>
 
-
 	<!--Oscar Modal | Opens From Oscar Tab in Movie Modal-->
 		<div id="oscar-modal" class="modal-background">
 			<div id="oscar-modal-content">

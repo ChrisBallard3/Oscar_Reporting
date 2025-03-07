@@ -210,46 +210,64 @@
 	export async function applyFilters() {
 		console.log("Apply Filters Clicked!");
 
+		const searchTitle = document.getElementById("filter-title")?.value.trim().toLowerCase() || "";
 		const searchName = document.getElementById("filter-person")?.value.trim().toLowerCase() || "";
 		const selectedMPA = document.getElementById("mpa-filter")?.value;
 		const minRuntime = parseInt(document.getElementById("filter-runtime-min")?.value) || 0;
 		const maxRuntime = parseInt(document.getElementById("filter-runtime-max")?.value) || Infinity;
+		const minRating = parseFloat(document.getElementById("filter-rating-min")?.value) || 0;
+		const maxRating = parseFloat(document.getElementById("filter-rating-max")?.value) || 10;
+		const minBoxOffice = parseFloat(document.getElementById("filter-box-office-min")?.value) || 0;
+		const maxBoxOffice = parseFloat(document.getElementById("filter-box-office-max")?.value) || Infinity;
 		const oscarCheckbox = document.getElementById("filter-oscar-winner")?.checked || false;
 		const oscarSliderValue = parseInt(document.getElementById("filter-oscar-slider")?.value) || 0;
 
-		const [runtimeData, mpaData, peopleData, oscarData] = await Promise.all([
+		const [runtimeData, mpaData, ratingData, boxOfficeData, peopleData, oscarData] = await Promise.all([
 			fetchMovieRuntimes(),
 			fetchMPARatings(),
+			fetchAverageRatings(),
+			fetchBoxOfficeEarnings(),
 			searchName ? fetchMoviePeople(searchName) : Promise.resolve([]), 
 			fetchOscarWins()
 		]);
 
+		console.log("Fetched Rating Data:", ratingData);
+		console.log("Fetched Box Office Data:", boxOfficeData);
 		console.log("Fetched People Data:", peopleData);
 		console.log("Fetched Oscar Data:", oscarData);
 
 		const moviesWithFilters = allMovies.map(movie => {
 			const mpaInfo = mpaData.find(mpa => mpa.movie_id === movie.id);
 			const runtimeInfo = runtimeData.find(runtime => runtime.movie_id === movie.id);
-			const matchingPeople = peopleData.find(person => person.movie_id === movie.id) || {};
+			const ratingInfo = ratingData.find(rating => rating.movie_id === movie.id);
+			const boxOfficeInfo = boxOfficeData.find(boxOffice => boxOffice.movie_id === movie.id);
 			const oscarInfo = oscarData.find(oscar => oscar.movie_id === movie.id);
+			const peopleInfo = peopleData.filter(person => person.movie_id === movie.id);
 
 			return {
 				...movie,
 				mpa_rating: mpaInfo ? mpaInfo.mpa_rating : null,
 				runtime: runtimeInfo ? runtimeInfo.runtime : null,
-				writers: matchingPeople.writers || "",
-				directors: matchingPeople.directors || "",
-				cast: matchingPeople.cast || "",
-				total_wins: oscarInfo ? oscarInfo.total_wins : 0
+				average_rating: ratingInfo ? parseFloat(ratingInfo.average_rating) : null,
+				box_office_earnings: boxOfficeInfo ? parseFloat(boxOfficeInfo.box_office_earnings) : 0,
+				total_wins: oscarInfo ? oscarInfo.total_wins : 0,
+				writers: peopleInfo.map(person => person.writers).filter(Boolean).join(", ") || "",
+				directors: peopleInfo.map(person => person.directors).filter(Boolean).join(", ") || "",
+				cast: peopleInfo.map(person => person.cast).filter(Boolean).join(", ") || ""
 			};
 		});
 
 		console.log("Movies with Filters Applied:", moviesWithFilters);
 
 		const filteredMovies = moviesWithFilters.filter(movie => {
+			const passesTitle = !searchTitle || movie.title.toLowerCase().includes(searchTitle);
 			const passesMPA = !selectedMPA || movie.mpa_rating === selectedMPA;
 			const runtime = movie.runtime !== null ? parseInt(movie.runtime) : null;
 			const passesRuntime = runtime !== null && runtime >= minRuntime && runtime <= maxRuntime;
+			const rating = movie.average_rating !== null ? parseFloat(movie.average_rating) : null;
+			const passesRating = rating !== null && rating >= minRating && rating <= maxRating;
+			const boxOffice = movie.box_office_earnings !== null ? parseFloat(movie.box_office_earnings) : 0;
+			const passesBoxOffice = boxOffice >= minBoxOffice && boxOffice <= maxBoxOffice;
 
 			const passesPeople = !searchName || 
 				(movie.writers && movie.writers.toLowerCase().includes(searchName)) ||
@@ -260,7 +278,16 @@
 
 			const passesOscarSlider = movie.total_wins >= oscarSliderValue;
 
-			return passesMPA && passesRuntime && passesPeople && passesOscarFilter && passesOscarSlider;
+			return (
+				passesTitle &&
+				passesMPA &&
+				passesRuntime &&
+				passesRating &&
+				passesBoxOffice &&
+				passesPeople &&
+				passesOscarFilter &&
+				passesOscarSlider
+			);
 		});
 
 		console.log("Filtered Movies:", filteredMovies);
